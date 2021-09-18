@@ -38,7 +38,7 @@ namespace ConsoleAppElection02Lists
             int CandidateCount = int.Parse(Console.ReadLine());
 
             //Step 2 Read the candidate name and party into a list using a for loop.  Use one list for candidate name and another for party.
-            //Step 3 Create a list to track the final count of votes for each candidate.  This is the third list created.
+            //Step 3 Create a list to track the final count of votes for each candidate (VoteCount).  This is the third list created.
             for (int i = 0; i < CandidateCount; i++)
             {
                 candidateNameList.Add(Console.ReadLine());
@@ -47,7 +47,7 @@ namespace ConsoleAppElection02Lists
             }
 
 
-            //Step 4 Read the number of votes and store it in an integer variable.
+            //Step 4 Read the number of votes cast and store it in an integer variable.
             int totalVoteCount = int.Parse(Console.ReadLine());
             List<string> VotesList = new List<string>();
 
@@ -76,7 +76,7 @@ namespace ConsoleAppElection02Lists
             }
 
 
-            // Step 7 - Loop through the Candidates VoteCount to determine who the winner is with the highest votes.  Also.. get the party name of the winning candidate.
+            // Step 7 Loop through the Candidates VoteCount to determine who the winner is with the highest votes.  Also.. get the party name of the winning candidate.
             //Find the index of the winnder in candidateList
             int WinningCandidateIndex = 0;
             // Find the int value of the most votes
@@ -93,7 +93,7 @@ namespace ConsoleAppElection02Lists
                 }
             }
 
-            //Step 8 - Check for a tie.  Loop through the Candidates VoteCount to see if more than one candidate has the winning vote count.
+            //Step 8 Check for a tie.  Loop through the Candidates VoteCount to see if more than one candidate has the winning vote count.
             //The WinningCandidateVoteCount is known so check if more than one candidate has that many votes
             int tieCountCheck = 0;
             for (int i = 0; i < candidateVotesList.Count; i++)
@@ -103,6 +103,8 @@ namespace ConsoleAppElection02Lists
                     tieCountCheck += 1;
                 }
             }
+
+            //Step 9 Display results. Either that there is a tie or return the party name of the winning candidate.
 
             if (tieCountCheck > 1)
             {
